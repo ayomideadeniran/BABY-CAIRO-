@@ -291,14 +291,261 @@
 
 // Expressions and statements 
 
-fn main() {
-    let y = 6; // This ia a Statement. This doesn't return a value
-    let x = {
-        let z = 3; // This is a statement within a block
-        z + 1 // This is an Expression. This return a value, 4
-    };
+// fn main() {
+//     let y = 6; // This ia a Statement. This doesn't return a value
+//     let x = {
+//         let z = 3; // This is a statement within a block
+//         z + 1 // This is an Expression. This return a value, 4
+//     };
 
-    println!("The value of Y is {}, The value of X: {}", y, x);
+//     println!("The value of Y is {}, The value of X: {}", y, x);
+// }
+
+
+// Function and struct
+
+// #[derive(Drop, Copy)]
+
+// struct Book {
+//     title: felt252,
+//     author: felt252,
+//     pub_year: u256,
+// }
+
+// // function to display book
+
+// fn display_book(book: Book) {
+//  println!(
+//     "The book title is {}, the author is {}, and the year is {}",
+//     book.title,
+//     book.author,
+//     book.pub_year
+//  );
+// }
+
+// fn main() {
+//     let my_book = Book {
+//         title: 'The Catcher in the Rye',
+//         author: 'J.D. Salinger',
+//         pub_year: 1951
+//     };
+
+//     display_book(my_book);
+// }
+
+
+
+
+// Memory Management
+// fn main() {
+//     let mut x = 5;  //Use the mut keyword and make X mutable, the error in line 6 Clears
+//     println!("The value of first x is: {}", x);
+//     x = 6;  // Alternatively use let keyword and overshadow the x, the error clears
+//     println!("The value of second x is {}", x)
+// }
+
+
+
+
+
+
+
+
+// CONSTANT DECLARATION
+
+
+
+
+// #[derive(Copy, Drop)]
+
+// const ONE_HOUR_IN_SECONDS: u32 = 3600;
+
+// struct  AnyStruct  {
+//     a: u256,
+//     b: u32,
+// }
+
+
+// const STUCT_INSTANCE: AnyStruct = AnyStruct {a: 0, b: 1};
+
+// enum AnyEnum {
+//     move,
+//     stop,
+// }
+
+// const ENUM_INSTANCE: AnyEnum = AnyEnum::move;
+// const ENUM_INSTANCE_ONE: AnyEnum = AnyEnum::stop;
+
+// const BOOL_FIXED_SIZE_ARRAY: [bool; 2] = [true, false];
+// const FIXED_SIZE_ARRAY: [u32; 2] = [1, 3];
+
+
+
+
+// Error Code 
+
+
+
+fn foo(arr: @Array<u128>) {
+    arr;
+    println!("Hi Ayomide");
 }
+
+
+fn main() {
+    let mut arr: Array<u128> = array![];
+    foo(@arr);
+    foo(@arr);  // Throws an error because variable was previously moved
+}
+
+
+// fn main() {
+//     let mut arr: Array<u128> = array![];
+//     foo(ref arr);
+//     foo(arr);  // Throws an error because variable was previously moved
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fn main() {
+//     let small_num: u8 = 10;
+//     let big_num: u16 = small_num.into(); // Using .into() for conversion
+
+//     println!("Small number (u8): {}", small_num);
+//     println!("Big number (u16): {}", big_num);
+
+//     let small_num2: u32 = 255;
+//     let big_num2: u64 = small_num2.into();
+
+//     println!("Small number (u32): {}", small_num2);
+//     println!("Big number (u64): {}", big_num2);
+// }
+
+
+
+
+
+
+
+// #[derive(Drop, Copy)]
+// struct Student {
+//     name: felt252,
+//     age: u8,
+//     student_id: felt252,
+//     grade: u8,
+// }
+
+// #[derive(Drop, Copy)]
+// struct Book {
+//     title: felt252,
+//     author: felt252,
+//     publication_year: u16,
+//     isbn: u256,
+// }
+
+// #[derive(Drop, Copy)]
+// struct Car {
+//     make: felt252,
+//     model: felt252,
+//     year: u16,
+//     mileage: u32,
+// }
+
+// fn main() {
+//     // Student instance
+//     let student1 = Student {
+//         name: 'Alice',
+//         age: 20,
+//         student_id: 'S12345',
+//         grade: 12,
+//     };
+
+//     // Book instance
+//     let book1 = Book {
+//         title: 'The Great Novel',
+//         author: 'John Doe',
+//         publication_year: 2020,
+//         isbn: 9781234567890,
+//     };
+
+//     // Car instance
+//     let car1 = Car {
+//         make: 'Toyota',
+//         model: 'Camry',
+//         year: 2022,
+//         mileage: 15000,
+//     };
+
+//     // You can now use these instances
+//     println!("Student: {}, Age: {}, ID: {}, Grade:{}", student1.name, student1.age, student1.student_id, student1.grade);
+//     println!("Book: {}, Author: {}, Year: {}, ISBN: {}", book1.title, book1.author, book1.publication_year, book1.isbn);
+//     println!("Car: {}, Model: {}, Year: {}, Mileage: {}", car1.make, car1.model, car1.year, car1.mileage);
+
+//     // You can create more instance like this
+//     let book2 = Book {
+//         title: 'The adventure',
+//         author: 'James smith',
+//         publication_year: 2000,
+//         isbn: 9781234567891,
+//     };
+//     println!("Book: {}, Author: {}, Year: {}, ISBN: {}", book2.title, book2.author, book2.publication_year, book2.isbn);
+// }
+
+
+
+
 
 
